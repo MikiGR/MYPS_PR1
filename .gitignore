@@ -49,3 +49,9 @@ Practica1/target/surefire-reports/TEST-clubdeportivo.ClubDeportivoAltoRendimient
 Practica1/target/test-classes/clubdeportivo/ClubDeportivoAltoRendimientoTest.class
 Practica1/target/test-classes/clubdeportivo/ClubDeportivoTest.class
 Practica1/target/test-classes/clubdeportivo/GrupoTest.class
+Practica1/target/classes/ClubDeportivoMain.class
+Practica1/target/classes/clubdeportivo/Grupo.class
+Practica1/target/classes/clubdeportivo/ClubException.class
+Practica1/target/classes/clubdeportivo/ClubDeportivoAltoRendimiento.class
+Practica1/target/classes/clubdeportivo/ClubDeportivo.class
+Practica1/.vscode/settings.json
