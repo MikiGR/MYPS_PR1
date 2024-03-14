@@ -1,4 +1,4 @@
-package test.java.clubdeportivo;
-public class ClubDeportivoTest {
+package clubdeportivo;
+public class GrupoTest {
     
 }
