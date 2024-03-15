@@ -8,10 +8,12 @@ public class ClubDeportivo {
 	private Grupo[] grupos;
 	private static final int TAM = 10;
 
+	//Completed - 1/1
 	public ClubDeportivo(String nombre) throws ClubException {
 		this(nombre, TAM);
 	}
 
+	//Completed - 1/1
 	public ClubDeportivo(String nombre, int n) throws ClubException {
 		if (n <= 0) {
 			throw new ClubException("ERROR: el club no puede crearse con un número de grupos 0 o negativo");
@@ -30,7 +32,9 @@ public class ClubDeportivo {
 		}
 		return i;
 	}
-
+	// Completed - 3/3
+	// DONE -> PLAZAS < 0
+	// DONE -> MATRICULADOS < 0
 	public void anyadirActividad(String[] datos) throws ClubException {
 		try {
 			int plazas = Integer.parseInt(datos[2]);
@@ -42,7 +46,7 @@ public class ClubDeportivo {
 			throw new ClubException("ERROR: formato de número incorrecto");
 		}
 	}
-
+	// Completed - 3/3
 	public void anyadirActividad(Grupo g) throws ClubException {
 		if (g==null){ // ADDME: anaydido para comprobar los grupos nulos
 			throw new ClubException("ERROR: el grupo es nulo");
@@ -56,6 +60,11 @@ public class ClubDeportivo {
 		}
 	}
 
+	// Completed - 4/4
+	// Case plazaslibres = 0
+	//Case plazaslibres = max plazas
+	//Case actividad no existente
+	// Case exito
 	public int plazasLibres(String actividad) {
 		int p = 0;
 		int i = 0;
@@ -67,7 +76,8 @@ public class ClubDeportivo {
 		}
 		return p;
 	}
-
+	// NOT Completed - /
+	// Case arg -> npersonas < 0 
 	public void matricular(String actividad, int npersonas) throws ClubException {
 		int plazas = plazasLibres(actividad);
 		if (plazas < npersonas) {
@@ -88,6 +98,7 @@ public class ClubDeportivo {
 		}
 	}
 
+	// NOT Completed - /
 	public double ingresos() {
 		double cantidad = 0.0;
 		int i = 0;
