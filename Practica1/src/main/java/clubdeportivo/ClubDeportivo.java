@@ -46,6 +46,7 @@ public class ClubDeportivo {
 			throw new ClubException("ERROR: formato de número incorrecto");
 		}
 	}
+
 	// Completed - 3/3
 	public void anyadirActividad(Grupo g) throws ClubException {
 		if (g==null){ // ADDME: anaydido para comprobar los grupos nulos
@@ -76,7 +77,8 @@ public class ClubDeportivo {
 		}
 		return p;
 	}
-	// NOT Completed - /
+
+	//Completed - /3
 	// Case arg -> npersonas < 0 
 	public void matricular(String actividad, int npersonas) throws ClubException {
 		int plazas = plazasLibres(actividad);
@@ -98,7 +100,7 @@ public class ClubDeportivo {
 		}
 	}
 
-	// NOT Completed - /
+	//  Completed - 2/2
 	public double ingresos() {
 		double cantidad = 0.0;
 		int i = 0;
@@ -108,7 +110,7 @@ public class ClubDeportivo {
 		}
 		return cantidad;
 	}
-
+	// Completed - 3/3
 	public String toString() {
 		StringJoiner sj = new StringJoiner(", ", "[ ", " ]");
 		int i = 0;
