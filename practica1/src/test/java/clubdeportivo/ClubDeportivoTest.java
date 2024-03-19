@@ -184,6 +184,20 @@ public class ClubDeportivoTest {
     }
 
     @Test
+    @DisplayName("Si la actividad tiene plazas suficientes se matriculan correctamente.")
+    void matricular_plazasSolicitadasIgualesALasDisponibles_returnTrue() throws ClubException{
+        int nplazas = 25;
+        int matriculados = 10;
+        int futurosAlumnos = 15;
+        String actividad = "Pesquera";
+        Grupo g = new Grupo("Juan",actividad,nplazas,matriculados,5.0);
+        cd.anyadirActividad(g);
+        cd.matricular(actividad, futurosAlumnos);
+        assertEquals(nplazas-matriculados-futurosAlumnos,cd.plazasLibres(actividad));
+    }
+
+
+    @Test
     @DisplayName("Si el numero de personas indicadas son negativas no se hace nada")
     void matricular_nPersonasNegativoNoSeHaceNada_returnTrue() throws ClubException{
         int nplazas = 25;
@@ -194,6 +208,19 @@ public class ClubDeportivoTest {
         cd.anyadirActividad(g);
         cd.matricular(actividad, futurosAlumnos);
         assertEquals(nplazas-matriculados,cd.plazasLibres(actividad));
+    }
+
+    @Test
+    @DisplayName("Si la actividad no existe se lanza una excepcion")
+    void matricular_actividadNoExistente_returnTrue() throws ClubException{
+        int nplazas = 25;
+        int matriculados = 10;
+        int futurosAlumnos = 5;
+        String actividad = "Pesquera";
+        Grupo g = new Grupo("Juan",actividad,nplazas,matriculados,5.0);
+        cd.anyadirActividad(g);
+        assertThrows(ClubException.class,()->{cd.matricular("Running", futurosAlumnos);});
+        
     }
 
     @Test

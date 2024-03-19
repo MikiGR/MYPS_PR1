@@ -78,7 +78,7 @@ public class ClubDeportivo {
 		return p;
 	}
 
-	//Completed - /3
+	//Completed - 3/3
 	// Case arg -> npersonas < 0 
 	public void matricular(String actividad, int npersonas) throws ClubException {
 		int plazas = plazasLibres(actividad);
