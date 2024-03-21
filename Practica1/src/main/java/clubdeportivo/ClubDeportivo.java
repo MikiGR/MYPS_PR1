@@ -3,6 +3,26 @@
 @author Pablo León Vazquez
 */
 
+/* 
+PRIMER ERROR: En el método buscar(Grupo g) si el grupo g es nulo 
+no está controlado.
+Solución: Añadir al principio if(g==null) return -1;
+
+SEGUNDO ERROR: Si el constructor de 2 parametros recibe como 2º
+parametro el valor 1 he intento añadir 2 grupos salta la excepción 
+index out of bounds (no controlado)
+Solución: Añadir al principio del if(pos == -1) de anyadirActividad(Grupo g)
+if (ngrupos >= grupos.length) {
+    throw new ClubException("ERROR: no se pueden añadir más grupos, el club está lleno");
+}
+
+TERCER ERROR: En el método anyadirActividad(String[] datos) si el array 
+datos tiene menos de 5 elementos no está controlado.
+Solución: Añadir al principio del método anyadirActividad(String[] datos)
+if (datos.length < 5) {
+	throw new ClubException("ERROR: faltan datos");
+}
+*/
 package clubdeportivo;
 
 import java.util.StringJoiner;
