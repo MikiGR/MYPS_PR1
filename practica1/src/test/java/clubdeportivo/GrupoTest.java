@@ -136,7 +136,7 @@ public class GrupoTest {
     }
 
     @Test
-    @DisplayName("Al crear dos grupos diferencias con los mismos valores son iguales")
+    @DisplayName("Al crear dos grupos diferentes con los mismos valores son iguales")
     public void equals_gruposIguales_returnTrue() {
         try {
             Grupo g = new Grupo("c1", "d1", 10, 5, 2.0);
@@ -153,6 +153,30 @@ public class GrupoTest {
         try {
             Grupo g = new Grupo("c1", "d1", 10, 5, 2.0);
             assertFalse(g.equals(new Object()));
+        } catch (ClubException e) {
+            assertFalse(true);
+        }
+    }
+
+    @Test
+    @DisplayName("Al comparar dos grupos si uno tiene mismo codigo pero diferente actividad al otro devuelve false")
+    public void equals_gruposNoIguales_returnFalse() {
+        try {
+            Grupo g = new Grupo("c1", "d1", 10, 5, 2.0);
+            Grupo g2 = new Grupo("c1", "d2", 10, 5, 2.0);
+            assertFalse(g.equals(g2));
+        } catch (ClubException e) {
+            assertFalse(true);
+        }
+    }
+
+    @Test
+    @DisplayName("Al comparar dos grupos si uno no tiene mismo codigo pero misma actividad al otro devuelve false")
+    public void equals_gruposNoIguales2_returnFalse() {
+        try {
+            Grupo g = new Grupo("c1", "d1", 10, 5, 2.0);
+            Grupo g2 = new Grupo("c2", "d1", 10, 5, 2.0);
+            assertFalse(g.equals(g2));
         } catch (ClubException e) {
             assertFalse(true);
         }

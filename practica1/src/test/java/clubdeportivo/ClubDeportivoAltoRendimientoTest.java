@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 public class ClubDeportivoAltoRendimientoTest {
     @Test
     @DisplayName("Al crear un club de alto rendimiento con valor incremento negativo o 0 lanza excepción")
-    public void ClubDeportivoAltoRendimientoTresParametros_valorIncrementoNegativo_returnClubException() {
+    public void ClubDeportivoAltoRendimiento_TresParametrosYValorIncrementoNegativo_returnClubException() {
         assertThrows(ClubException.class, () ->  {
             new ClubDeportivoAltoRendimiento("c1", 10, 0);
         });
@@ -18,15 +18,15 @@ public class ClubDeportivoAltoRendimientoTest {
 
     @Test
     @DisplayName("Al crear un club de alto rendimiento con valor maximo negativo o 0 lanza excepción")
-    public void ClubDeportivoAltoRendimientoTresParametros_valorMaximoNegativo_returnClubException() {
+    public void ClubDeportivoAltoRendimiento_TresParametrosYValorMaximoNegativo_returnClubException() {
         assertThrows(ClubException.class, () ->  {
             new ClubDeportivoAltoRendimiento("c1", 0, 2.0);
         });
     }
 
     @Test
-    @DisplayName("Al crear un club de alto rendimiento con valores correctos se crea correctamente")
-    public void ClubDeportivoAltoRendimientoTresParametros_valoresCorrecto_returnTrue() {
+    @DisplayName("Al crear un club de alto rendimiento con 4 parámetros y valores correctos se crea correctamente")
+    public void ClubDeportivoAltoRendimiento_CuatroParametrosYValoresCorrecto_returnTrue() {
         try {
             ClubDeportivoAltoRendimiento c = new ClubDeportivoAltoRendimiento("c1", 10,  10, 10);
             assertTrue(null != c);
@@ -36,8 +36,19 @@ public class ClubDeportivoAltoRendimientoTest {
     }
 
     @Test
+    @DisplayName("Al crear un club de alto rendimiento con 3 parámetros y valores correctos se crea correctamente")
+    public void ClubDeportivoAltoRendimiento_TresParametrosYValoresCorrecto_returnTrue() {
+        try {
+            ClubDeportivoAltoRendimiento c = new ClubDeportivoAltoRendimiento("c1",  10, 10);
+            assertTrue(null != c);
+        } catch (ClubException e) {
+            assertFalse(true);
+        }
+    }
+
+    @Test
     @DisplayName("Al crear un club de alto rendimiento con maximo cero lanza excepción")
-    public void ClubDeportivoAltoRendimientoCuatroParametros_valorMaximoCero_returnClubException() {
+    public void ClubDeportivoAltoRendimiento_CuatroParametrosYValorMaximoCero_returnClubException() {
         assertThrows(ClubException.class, () ->  {
             new ClubDeportivoAltoRendimiento("c1",10,  0, 2.0);
         });
@@ -45,7 +56,7 @@ public class ClubDeportivoAltoRendimientoTest {
 
     @Test
     @DisplayName("Al crear un club de alto rendimiento con tamaño cero lanza excepción")
-    public void ClubDeportivoAltoRendimientoCuatroParametros_valorIncrementoCero_returnClubException() {
+    public void ClubDeportivoAltoRendimiento_CuatroParametrosYValorIncrementoCero_returnClubException() {
         assertThrows(ClubException.class, () ->  {
             new ClubDeportivoAltoRendimiento("c1",10,  10, 0);
         });

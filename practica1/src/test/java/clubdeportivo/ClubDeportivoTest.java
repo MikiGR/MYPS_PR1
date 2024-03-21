@@ -190,10 +190,13 @@ public class ClubDeportivoTest {
         int matriculados = 10;
         int futurosAlumnos = 15;
         String actividad = "Pesquera";
+        String actividad2 = "Natacion";
         Grupo g = new Grupo("Juan",actividad,nplazas,matriculados,5.0);
+        Grupo g2 = new Grupo("Juan",actividad2,nplazas,matriculados,5.0);
         cd.anyadirActividad(g);
-        cd.matricular(actividad, futurosAlumnos);
-        assertEquals(nplazas-matriculados-futurosAlumnos,cd.plazasLibres(actividad));
+        cd.anyadirActividad(g2);
+        cd.matricular(actividad2, futurosAlumnos);
+        assertEquals(nplazas-matriculados-futurosAlumnos,cd.plazasLibres(actividad2));
     }
 
 
@@ -220,7 +223,6 @@ public class ClubDeportivoTest {
         Grupo g = new Grupo("Juan",actividad,nplazas,matriculados,5.0);
         cd.anyadirActividad(g);
         assertThrows(ClubException.class,()->{cd.matricular("Running", futurosAlumnos);});
-        
     }
 
     @Test
