@@ -1,3 +1,7 @@
+/*
+@author Miguel Galdeano Rodríguez
+@author Pablo León Vazquez
+*/
 import clubdeportivo.ClubDeportivo;
 import clubdeportivo.ClubException;
 import clubdeportivo.Grupo;
