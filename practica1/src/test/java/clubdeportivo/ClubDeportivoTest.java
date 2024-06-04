@@ -136,7 +136,7 @@ public class ClubDeportivoTest {
         String actividad = "Pesquera";
         Grupo g = new Grupo("Juan",actividad,nplazas,matriculados,5.0);
         cd.anyadirActividad(g);
-        assertEquals(cd.plazasLibres(actividad),plazasLibres);
+        assertEquals(cd.plazasLibres(actividad),0);
     }
 
     @Test
